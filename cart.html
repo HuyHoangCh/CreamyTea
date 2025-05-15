@@ -107,6 +107,14 @@
                 timeLeft--;
             }, 1000);
         }
+        document.querySelector('.checkout-btn').addEventListener('click', function() {
+    console.log('Nút thanh toán được click');
+    const modal = document.getElementById('payment-modal');
+    console.log('Modal element:', modal);
+    modal.classList.add('active');
+    console.log('Đã thêm class active');
+    startCountdown();
+});
     </script>
 </body>
 </html>
