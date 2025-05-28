@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu Toggle</title>
     <link rel="stylesheet" href="Styles/css2.css">
+    <script src="Scripts/search.js" defer></script>
 </head>	
 <body>
 <div class="tong">
@@ -19,7 +20,11 @@
                     <a href="index2.html">Về Chúng Tôi</a>
                     <a href="menu.html">Menu</a>
                     <a href="tintuc.html">Tin Tức</a>
-                    <a href="#danhgia">Liên hệ</a>
+                    <a href="lienhe.html">Liên hệ</a>
+                    <div class="search-container">
+                        <input type="text" placeholder="Tìm kiếm..." class="search-input">
+                        <button type="submit" class="search-button">🔍</button>
+                    </div>
                 </nav>
             </div>
         </div>
@@ -28,9 +33,9 @@
         <img src="images/LOGO P2_preview_rev_1.png" class="anh1-overlay">
         <div class="slider">
             <div class="slides">
-                <img src="images/image/3.jpg" alt="Slide 1" height="550px">
-                <img src="images/image/2.jpg" alt="Slide 2" height="550px">
-                <img src="images/image/1.jpg" alt="Slide 3" height="550px">
+                <img src="images/image/3.jpg" alt="Slide 1" height="850px">
+                <img src="images/image/2.jpg" alt="Slide 2" height="850px">
+                <img src="images/image/1.jpg" alt="Slide 3" height="850px">
             </div>
             <img src="images/LOGO P2_preview_rev_1.png" class="slider-overlay">
             <button class="prev">❮</button>
@@ -151,7 +156,7 @@
                 <input type="tel" placeholder="Phone">
                 <button type="submit">Send</button>
             </div>
-            <textarea placeholder=""></textarea>
+            <textarea placeholder="Hãy cho tôi biết ý kiến của bạn tại đây"></textarea>
         </form>
     </div>
 </div>
@@ -240,7 +245,6 @@
         el.classList.add('fade-in');
         observer.observe(el);
     });
-    // ... existing code ...
     // Thêm code xử lý cuộn mượt
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
