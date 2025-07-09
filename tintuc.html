@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tin Tức - Creamy Tea</title>
+    <link rel="stylesheet" href="Styles/tintuc.css">
+           <link rel="icon" type="image/png" href="images/LOGO P2_preview_rev_1.png">
+         <link rel="stylesheet" href="Styles/timkiem.css">
+   <script src="Scripts/search.js" defer></script>
+        <script src="Scripts/search.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="header">
+        <div class="tren">
+            <div class="iconcha">
+                <div class="icon">☰</div>
+            </div>
+            <div class="menu">
+                <nav>
+                    <a href="index.html">Trang Chủ</a>
+                    <a href="index2.html">Về Chúng Tôi</a>
+                    <a href="menu.html">Menu</a>
+                    <a href="tintuc.html">Tin Tức</a>
+                    <a href="lienhe.html">Liên hệ</a>
+                    <div class="search-container">
+                        <input type="text" placeholder="Tìm kiếm..." class="search-input">
+                        <button type="submit" class="search-button">🔍</button>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>  
+
+    <div class="news-container">
+        <h1 class="page-title">TIN TỨC & SỰ KIỆN</h1>
+        
+        <div class="news-grid">
+            <!-- Tin tức 1 -->
+            <div class="news-item">
+                <div class="news-image">
+                    <img src="images/tintuc1.jpg" alt="Tin tức 1">
+                </div>
+                <div class="news-content">
+                    <h2>Khai trương cửa hàng mới tại Vũng Tàu</h2>
+                    <p class="news-date">1/03/2024</p>
+                    <p class="news-excerpt">Creamy Tea vui mừng thông báo khai trương cửa hàng mới tại trung tâm thành phố Vũng Tàu...</p>
+                </div>
+            </div>
+
+            <!-- Tin tức 2 -->
+            <div class="news-item">
+                <div class="news-image">
+                    <img src="images/tintuc2.jpg" alt="Tin tức 2">
+                </div>
+                <div class="news-content">
+                    <h2>Ra mắt bộ sưu tập mùa hè 2024</h2>
+                    <p class="news-date">10/03/2024</p>
+                    <p class="news-excerpt">Chào đón mùa hè sôi động với bộ sưu tập đồ uống mới đầy màu sắc và hương vị độc đáo...</p>
+                </div>
+            </div>
+
+            <!-- Tin tức 3 -->
+            <div class="news-item">
+                <div class="news-image">
+                    <img src="images/tintuc3.png" alt="Tin tức 3">
+                </div>
+                <div class="news-content">
+                    <h2>Chương trình khuyến mãi tháng 3</h2>
+                    <p class="news-date">01/03/2024</p>
+                    <p class="news-excerpt">Ưu đãi đặc biệt dành cho khách hàng thân thiết với nhiều phần quà hấp dẫn...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Section -->
+    <div class="bottom">
+        <div class="bottom-content">
+            <div class="logo">
+                <img src="Logo/logo.jpg" alt="Creamy Tea Logo">
+            </div>
+            <div class="info-container">
+                <div class="copyright">
+                    © CREAMY TEA . made by fresh cream
+                </div>
+                <div class="contact-info">
+                    <p class="address">Địa chỉ: 935/7/43C Bình giã / Vũng Tàu</p>
+                    <p class="email">Email: tranhuyhoang159753@gmail.com</p>
+                    <p>SĐT:0332369411</p>
+                </div>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/profile.php?id=100065041573512&locale=vi_VN">
+                    <img src="images/facebook logos vector (AI, EPS, SVG, PDF, CDR) free download_preview_rev_1.png" alt="Facebook">
+                </a>
+                <a href="https://www.tiktok.com/@hoangtran.chm?lang=vi-VN">
+                    <img src="images/Tik Tok Icon Circle PNG Transparent With Clear Background ID 473286 _ TopPNG_preview_rev_1.png" alt="TikTok">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('.icon').addEventListener('click', function() {
+            document.querySelector('.menu').classList.toggle('active');
+            this.classList.toggle('active');
+            this.innerHTML = this.classList.contains('active') ? '✖' : '☰';
+        });
+    </script>
+</body>
+</html>

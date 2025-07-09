@@ -1,0 +1,484 @@
+/* Reset & Base styles */
+body {
+    font-family: Arial,sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.tong {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #fff;
+}
+
+/* Header & Menu styles */
+.header {
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    top: -60px;
+    left: 0;
+    background: linear-gradient(to right, #8B7355, #6B563D);
+    transition: 0.5s ease;
+    z-index: 999;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.menu {
+    position: fixed;
+    top: -60px;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: linear-gradient(to right, #8B7355, #6B563D);
+    transition: 0.5s ease;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.menu.active {
+    top: 0;
+}
+
+.menu nav {
+    display: flex;
+    gap: 50px;
+}
+
+.menu a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    transition: 0.3s ease;
+    position: relative;
+}
+
+.menu a:hover {
+    color: white;
+    transform: scale(1.05);
+}
+
+.icon {
+    font-size: 25px;
+    cursor: pointer;
+    padding: 10px;
+    position: fixed;
+    top: 2px;
+    left: 12px;
+    z-index: 1001;
+    background: transparent;
+    border-radius: 5px;
+    color: black;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 40px;
+}
+
+.icon.active {
+    color: white;
+    transform: rotate(90deg); /* Thay đổi từ 150deg thành 90deg để X quay đúng góc */
+}
+
+/* Hero Section */
+.hero-section {
+    height: 600px;
+    background-image: url('../images/image/3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    margin-top: 0;
+}
+
+.header {
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    top: -60px;
+    left: 0;
+    background: linear-gradient(to right, #8B7355, #6B563D);
+    transition: 0.5s ease;
+    z-index: 999;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    letter-spacing: 5px;
+}
+
+.hero-content p {
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+/* About Container */
+.about-container {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-left {
+    position: relative;
+}
+
+.brand-logo img {
+    width: 200px;
+    margin-bottom: -120px;
+}
+
+.brand-showcase {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin: 20px 0;
+}
+
+.showcase-slides {
+    display: flex;
+    width: 300%;  /* Để chứa 3 ảnh */
+    transition: transform 0.5s ease;
+}
+
+.showcase-slides img {
+    width: 33.33%;  /* Mỗi ảnh chiếm 1/3 tổng chiều rộng */
+    height: 400px;  /* Chiều cao cố định */
+    object-fit: cover;  /* Đảm bảo ảnh không bị méo */
+    padding: 0 10px;  /* Tạo khoảng cách giữa các ảnh */
+    box-sizing: border-box;
+}
+
+.showcase-prev, .showcase-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.showcase-prev {
+    left: 10px;
+}
+
+.showcase-next {
+    right: 10px;
+}
+
+/* About Right Content */
+.about-right {
+    padding: 30px;
+}
+
+.about-title h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.about-title h1:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: #8B7355;
+}
+
+.about-subtitle p {
+    color: #666;
+    font-size: 18px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.about-description p {
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* Vision Container */
+.vision-container {
+    background: #f9f9f9;
+    padding: 80px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.vision-left {
+    padding: 0 50px;
+}
+
+.vision-left h2 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.vision-left h2:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: #8B7355;
+}
+
+.vision-content p {
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.vision-right img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Values Section */
+.values-section {
+    padding: 80px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.values-section h2 {
+    text-align: center;
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.values-section h2:after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: #8B7355;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 0 20px;
+}
+
+.value-item {
+    text-align: center;
+    padding: 30px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.value-item:hover {
+    transform: translateY(-10px);
+}
+
+.value-item img {
+    width: 80px;
+    margin-bottom: 20px;
+}
+
+.value-item h3 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.value-item p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Bottom Section */
+.bottom {
+    background: #e5d599;
+    padding: 40px 0;
+    color: white;
+}
+
+.bottom-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 0 20px;
+}
+
+.bottom .logo img {
+    height: 80px;
+}
+
+.info-container {
+    text-align: center;
+}
+
+.copyright {
+    margin-bottom: 15px;
+}
+
+.contact-info p {
+    margin: 10px 0;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icons img {
+    width: 30px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .menu {
+        display: none;
+        width: 100%;
+        position: fixed;
+        top: -100%;
+        left: 0;
+        background: linear-gradient(to right, #8B7355, #6B563D);
+        padding: 20px 0;
+        transition: top 0.3s ease;
+    }
+
+    .menu.active {
+        top: 60px;
+        display: block;
+    }
+
+    .menu nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .about-container,
+    .vision-container,
+    .values-grid,
+    .bottom-content {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content h1 {
+        font-size: 36px;
+    }
+}
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hiệu ứng cho các card sản phẩm */
+.value-item {
+    text-align: center;
+    padding: 30px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.value-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Hiệu ứng cho nút đặt hàng */
+.order-now {
+    position: relative;
+}
+
+.order-now::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.2);
+    transition: all 0.5s ease;
+}
+
+.order-now:hover::before {
+    left: 100%;
+}
+
+/* Hiệu ứng cho ảnh sản phẩm */
+.product-card img {
+    position: relative;
+}
+
+.product-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Thêm JavaScript để kích hoạt hiệu ứng fade-in khi scroll */

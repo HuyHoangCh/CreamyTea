@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ hàng - Creamy Tea</title>
+    <link rel="stylesheet" href="Styles/cart.css">
+      <link rel="stylesheet" href="Styles/timkiem.css">
+   <script src="Scripts/search.js" defer></script>
+        <link rel="icon" type="image/png" href="images/LOGO P2_preview_rev_1.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+   <div class="header">
+        <div class="tren">
+            <div class="iconcha">
+                <div class="icon">☰</div>
+            </div>
+            <div class="menu">
+                <nav>
+                    <a href="index.html">Trang Chủ</a>
+                    <a href="index2.html">Về Chúng Tôi</a>
+                    <a href="menu.html">Menu</a>
+                    <a href="tintuc.html">Tin Tức</a>
+                    <a href="lienhe.html">Liên hệ</a>
+                    <div class="search-container">
+                        <input type="text" placeholder="Tìm kiếm..." class="search-input">
+                        <button type="submit" class="search-button">🔍</button>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>  
+
+    <div class="cart-container">
+        <div class="cart-header">
+            <button class="back-btn" onclick="window.history.back()">
+                <i class="fas fa-arrow-left"></i> Quay lại
+            </button>
+            <h1>Giỏ hàng của bạn</h1>
+        </div>
+        <div class="cart-items">
+            <!-- Các sản phẩm sẽ được thêm vào đây bằng JavaScript -->
+        </div>
+        <div class="cart-total">
+            <h3>Tổng cộng: <span id="total-amount">0đ</span></h3>
+            <button class="checkout-btn">Thanh toán</button>
+        </div>
+    </div>
+
+<!-- Thêm modal thanh toán -->
+<div id="payment-modal" class="modal">
+    <div class="modal-content">
+        <h2>Quét mã QR để thanh toán</h2>
+        <div class="qr-container">
+            <img src="images/maqrthanhtoan.jpg" alt="Mã QR thanh toán">
+        </div>
+        <div class="timer">
+            <p>Thời gian còn lại: <span id="countdown">5:00</span></p>
+        </div>
+        <button class="close-modal">&times;</button>
+    </div>
+</div>
+
+    <script src="Scripts/cart.js"></script>
+    <script>
+        // Menu toggle
+        document.querySelector('.icon').addEventListener('click', function() {
+            document.querySelector('.menu').classList.toggle('active');
+            this.classList.toggle('active');
+            this.innerHTML = this.classList.contains('active') ? '✖' : '☰';
+        });
+
+        // Xử lý hiệu ứng menu khi cuộn
+        let lastScrollTop = 0;
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > lastScrollTop) {
+                // Cuộn xuống
+                document.querySelector('.menu').classList.remove('active');
+            } else {
+                // Cuộn lên
+                if (scrollTop > 100) {
+                    document.querySelector('.menu').classList.add('active');
+                } else {
+                    document.querySelector('.menu').classList.remove('active');
+                }
+            }
+            lastScrollTop = scrollTop;
+        });
+
+        // Xử lý modal
+        document.querySelector('.checkout-btn').addEventListener('click', function() {
+            const modal = document.getElementById('payment-modal');
+            modal.classList.add('active');  // Thay vì style.display = 'block'
+            startCountdown();
+        });
+
+        document.querySelector('.close-modal').addEventListener('click', function() {
+            document.getElementById('payment-modal').classList.remove('active');  // Thay vì style.display = 'none'
+        });
+
+        function startCountdown() {
+            let timeLeft = 5 * 60;
+            const countdownDisplay = document.getElementById('countdown');
+            
+            const timer = setInterval(function() {
+                const minutes = Math.floor(timeLeft / 60);
+                const seconds = timeLeft % 60;
+                
+                countdownDisplay.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+                
+                if (timeLeft <= 0) {
+                    clearInterval(timer);
+                    document.getElementById('payment-modal').classList.remove('active');  // Thay đổi này nữa
+                    alert('Hết thời gian thanh toán!');
+                }
+                
+                timeLeft--;
+            }, 1000);
+        }
+        document.querySelector('.checkout-btn').addEventListener('click', function() {
+    console.log('Nút thanh toán được click');
+    const modal = document.getElementById('payment-modal');
+    console.log('Modal element:', modal);
+    modal.classList.add('active');
+    console.log('Đã thêm class active');
+    startCountdown();
+});
+    </script>
+</body>
+</html>

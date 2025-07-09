@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên hệ - Creamy Tea</title>
+    <link rel="stylesheet" href="Styles/lienhe.css">
+    <link rel="stylesheet" href="Styles/css2.css">
+    <script src="Scripts/search.js" defer></script>
+        <link rel="icon" type="image/png" href="images/LOGO P2_preview_rev_1.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="header">
+        <div class="tren">
+            <div class="iconcha">
+                <div class="icon">☰</div>
+            </div>
+            <div class="menu">
+                <nav>
+                    <a href="index.html">Trang Chủ</a>
+                    <a href="index2.html">Về Chúng Tôi</a>
+                    <a href="menu.html">Menu</a>
+                    <a href="tintuc.html">Tin Tức</a>
+                    <a href="lienhe.html">Liên hệ</a>
+                    <div class="search-container">
+                        <input type="text" placeholder="Tìm kiếm..." class="search-input">
+                        <button type="submit" class="search-button">🔍</button>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>  
+
+    <div class="contact-container">
+        <div class="contact-info">
+            <h1>Liên Hệ Với Chúng Tôi</h1>
+            <div class="info-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <p>935/7/43C Bình giã / Vũng Tàu</p>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-phone"></i>
+                <p>0332369411</p>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-envelope"></i>
+                <p>tranhuyhoang159753@gmail.com</p>
+            </div>
+            <div class="social-links">
+                <a href="https://www.facebook.com/profile.php?id=100065041573512&locale=vi_VN" target="_blank">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://www.tiktok.com/@hoangtran.chm?lang=vi-VN" target="_blank">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="contact-form">
+            <form id="contactForm">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" placeholder="Họ và tên" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="phone" name="phone" placeholder="Số điện thoại" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" name="message" placeholder="Nội dung tin nhắn" required></textarea>
+                </div>
+                <button type="submit">Gửi tin nhắn</button>
+            </form>
+        </div>
+
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3926.8894344740687!2d107.08974797486452!3d10.196595889279417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31756fd4554f0cf5%3A0x9f87a69547dcbc84!2zOTM1LCA3LCA0M2MgxJAuIELDrG5oIEdpw6MsIFBoxrDhu51uZyAxMCwgVsWpbmcgVMOgdSwgQsOgIFLhu4thIC0gVsWpbmcgVMOgdSwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1709554844316!5m2!1svi!2s"
+                width="100%" 
+                height="450" 
+                style="border:0;border-radius:8px;box-shadow:0 2px 10px rgba(0,0,0,0.1);" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </div>
+    <!--Start of Tawk.to Script-->
+
+    <!--End of Tawk.to Script-->
+
+    <script>
+        // Menu toggle
+        document.querySelector('.icon').addEventListener('click', function() {
+            document.querySelector('.menu').classList.toggle('active');
+            this.classList.toggle('active');
+            this.innerHTML = this.classList.contains('active') ? '✖' : '☰';
+        });
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Cảm ơn bạn đã liên hệ với chúng tôi. Chúng tôi sẽ phản hồi sớm nhất có thể!');
+            this.reset();
+        });
+    </script>
+
+    <!-- Nút lên đầu trang -->
+    <div class="back-to-top">↑</div>
+
+    <!-- Script cho nút lên đầu trang -->
+    <script>
+        // Xử lý nút lên đầu trang
+        const backToTop = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 100) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+        
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>

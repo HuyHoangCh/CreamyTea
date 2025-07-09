@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Creamy Tea</title>
+    <link rel="stylesheet" href="Styles/milktea.css">
+    <link rel="stylesheet" href="Styles/timkiem.css">
+   <script src="Scripts/search.js" defer></script>
+        <link rel="icon" type="image/png" href="images/LOGO P2_preview_rev_1.png">
+</head>
+<body>
+<div class="tong">
+   <div class="header">
+        <div class="tren">
+            <div class="iconcha">
+                <div class="icon">☰</div>
+            </div>
+            <div class="menu">
+                <nav>
+                    <a href="index.html">Trang Chủ</a>
+                    <a href="index2.html">Về Chúng Tôi</a>
+                    <a href="menu.html">Menu</a>
+                    <a href="tintuc.html">Tin Tức</a>
+                    <a href="lienhe.html">Liên hệ</a>
+                    <div class="search-container">
+                        <input type="text" placeholder="Tìm kiếm..." class="search-input">
+                        <button type="submit" class="search-button">🔍</button>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>  
+    <div class="menu-container" style="background-color: #FFF8E7;">
+        <div class="menu-header">
+            <h1>Cà Phê</h1>
+            <p><a href="index.html">Trang Chủ</a>><a href="menu.html">Sản Phẩm</a>><a href="coffee.html">Cà Phê</a></p>
+            <p></p>
+        </div>
+
+        <div class="filter-container">
+            <a href="menu.html"><button class="filter-btn ">Tất cả</button></a>
+            <a href="milk-tea.html"><button class="filter-btn">Trà sữa</button></a>
+            <a href="fruit-tea.html"><button class="filter-btn">Trà trái cây</button></a>
+            <a href="coffee.html"><button class="filter-btn active">Cà Phê</button></a>
+            <a href="sanphammoi.html"><button class="filter-btn">Sản Phẩm Mới</button></a>
+            <a href="sanphamnoibat.html"><button class="filter-btn">Sản Phẩm Nổi Bật</button></a>
+            <a href="others.html"><button class="filter-btn">Đồ uống khác</button></a>
+        </div>
+
+        <div class="products-grid">
+            <!-- Sản phẩm mẫu - có thể nhân bản và chỉnh sửa -->
+          
+            <div class="product-card">
+                <a href="capheden.html" class="product-link">
+                    <img src="images/cafe/cafe den.jpg" alt="Trà sữa truyền thống">
+                    <div class="product-info">
+                        <h3>Cà Phê Đen</h3>
+                        <p class="description">Vị Đắng Trên Từng Giọt Cà Phê</p>
+                        <div class="price">35.000đ</div>
+                        <button class="order-now">Đặt ngay</button>
+                    </div>
+                </a>
+            </div>
+            <div class="product-card">
+                <a href="caphesua.html" class="product-link">
+                    <img src="images/cafe/cafe sua.jpg" alt="Trà sữa truyền thống">
+                    <div class="product-info">
+                        <h3>Cà Phê Sữa</h3>
+                        <p class="description">Hương Vị Đắng Của Cà Phê Hòa Quyện Hương Ngọt Ngào Của Sữa</p>
+                        <div class="price">35.000đ</div>
+                        <button class="order-now">Đặt ngay</button>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Thêm phan trang -->
+        <div class="pagination">
+            <a href="#" class="prev-page">&lt;</a>
+            <div class="page-numbers">
+                <a href="#" class="page active">1</a>
+                <a href="#" class="page">2</a>
+                <a href="#" class="page">3</a>
+            </div>
+            <a href="#" class="next-page">&gt;</a>
+        </div>
+    </div>
+
+    <div class="bottom">
+        <div class="bottom-content">
+            <div class="logo">
+                <img src="Logo/logo.jpg" alt="Creamy Tea Logo">
+            </div>
+            <div class="info-container">
+                <div class="copyright">
+                    © CREAMY TEA . made by fresh cream
+                </div>
+                <div class="contact-info">
+                    <p class="address">Địa chỉ: 935/7/43C Bình giã / Vũng Tàu</p>
+                    <p class="email">Email: tranhuyhoang159753@gmail.com</p>
+                </div>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/profile.php?id=100065041573512&locale=vi_VN">
+                    <img src="images/facebook logos vector (AI, EPS, SVG, PDF, CDR) free download_preview_rev_1.png" alt="Facebook">
+                </a>
+                <a href="https://www.tiktok.com/@hoangtran.chm?lang=vi-VN">
+                    <img src="images/Tik Tok Icon Circle PNG Transparent With Clear Background ID 473286 _ TopPNG_preview_rev_1.png" alt="TikTok">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.querySelector('.icon').addEventListener('click', function() {
+        document.querySelector('.menu').classList.toggle('active');
+        this.classList.toggle('active');
+        this.innerHTML = this.classList.contains('active') ? '✖' : '☰';
+    });
+
+    // Xử lý filter buttons
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            // Thêm logic lọc sản phẩm ở đây
+        });
+    });
+
+    // Xử lý phân trang động
+    const products = document.querySelectorAll('.product-card');
+    let currentPage = 1;
+    let itemsPerPage = 9; // Cố định số sản phẩm mỗi trang
+
+    function showPage(page) {
+        const start = (page - 1) * itemsPerPage;
+        const end = start + itemsPerPage;
+
+        products.forEach((product, index) => {
+            if (index >= start && index < end) {
+                product.style.display = 'block';
+            } else {
+                product.style.display = 'none';
+            }
+        });
+    }
+
+    function updatePagination() {
+        const totalPages = Math.ceil(products.length / itemsPerPage);
+        const pageNumbers = document.querySelector('.page-numbers');
+        pageNumbers.innerHTML = '';
+        
+        for(let i = 1; i <= totalPages; i++) {
+            const pageLink = document.createElement('a');
+            pageLink.href = '#';
+            pageLink.className = `page ${i === currentPage ? 'active' : ''}`;
+            pageLink.textContent = i;
+            pageLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                currentPage = i;
+                showPage(currentPage);
+                updatePaginationUI();
+            });
+            pageNumbers.appendChild(pageLink);
+        }
+    }
+
+    // Khởi tạo ban đầu
+    updatePagination();
+    showPage(1);
+
+    // Xử lý nút Previous và Next
+    document.querySelector('.prev-page').addEventListener('click', (e) => {
+        e.preventDefault();
+        if (currentPage > 1) {
+            currentPage--;
+            showPage(currentPage);
+            updatePaginationUI();
+        }
+    });
+
+    document.querySelector('.next-page').addEventListener('click', (e) => {
+        e.preventDefault();
+        const totalPages = Math.ceil(products.length / itemsPerPage);
+        if (currentPage < totalPages) {
+            currentPage++;
+            showPage(currentPage);
+            updatePaginationUI();
+        }
+    });
+
+    function updatePaginationUI() {
+        document.querySelectorAll('.pagination .page').forEach(pageBtn => {
+            pageBtn.classList.remove('active');
+            if (parseInt(pageBtn.textContent) === currentPage) {
+                pageBtn.classList.add('active');
+            }
+        });
+    }
+</script>
+</body>
+</html>
